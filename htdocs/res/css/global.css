@@ -1,0 +1,10 @@
+@charset "utf-8";
+body {
+  margin: 0;
+}
+header {
+  height: 44px;
+}
+.head h1 {
+  font-size: 16px;
+}
