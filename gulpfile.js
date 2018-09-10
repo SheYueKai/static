@@ -1,12 +1,22 @@
 var gulp = require('gulp')
 var less = require('gulp-less')
-var lessPath = "./origin/less"
+var lessSrc = 'origin/less/**/*.less',
+    jsSrc = 'origin/js/**/*.js',
+    lessDest = 'htdocs/res/css',
+    jsDest = 'htdocs/res/js';
 
 gulp.task('less', function(){
-        // console.log("less");
-        gulp.src('origin/less/**/*.less')
-        .pipe(less())
-        .pipe(gulp.dest('htdocs/res/css'))
-    // gulp.src('origin/less/global.less')
-    // .pipe(gulp.dest('htdocs/res/css'))
+    gulp.src(lessSrc)
+    .pipe(less())
+    .pipe(gulp.dest(lessDest))
 });
+
+gulp.task('js', function(){
+    gulp.src(jsSrc)
+    .pipe(gulp.dest(jsDest))
+});
+
+gulp.task('watch', function(){
+    gulp.watch(lessSrc, ['less'])
+    gulp.watch(jsSrc, ['js'])
+})

@@ -1,0 +1,131 @@
+@charset "utf-8";
+@import "../mod/fn.less";
+
+@page_width: 750px;
+@left: 100px;
+@right: 200px;
+@left_right: @left + @right;
+@green: #0f0;
+
+section{
+    min-width: @page_width;
+    margin-bottom: 50px;
+}
+
+.main{
+    background-color: @primary;
+}
+.left{
+    width: @left;
+    background-color: @blue;
+}
+.right{
+    width: @right;
+    background-color: @green;
+}
+
+.section1{
+    position: relative;
+    min-height: 300px;
+    .main{
+        position: absolute;
+        top: 0;
+        left: @left;
+        right: @right;
+    }
+    .left{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.section2{
+    position: relative;
+    .main{
+        margin: 0 @right 0 @left;
+    }
+    .left{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .right{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
+
+.section3{
+    .main{
+        margin: 0 @right 0 @left;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+}
+
+.section4{
+    .flex();
+    .main{
+        .fx(1);
+    }
+}
+
+.section5{
+    display: table;
+    &>div{
+        display: table-cell;
+    }
+}
+
+.section6{
+    display: grid;
+    grid-template-columns: 100px auto 200px;
+}
+
+.section7{
+    min-width: @page_width - @left_right;
+    padding: 0 @right 0 @left;
+    &>div{
+        position: relative;
+        float: left;
+    }
+    .left{
+        left: -@left;
+        margin-left: -100%;
+    }
+    .right{
+        right: -@right;
+        margin-left: -@right;
+    }
+}
+
+.section8{
+    min-width: @page_width - @left_right;
+    &>div{
+        float: left;
+    }
+    .main{
+        background-color: transparent;
+        .inner{
+            margin: 0 @right 0 @left;
+            background-color: @primary;
+        }
+    }
+    .left{
+        margin-left: -100%;
+    }
+    .right{
+        margin-left: -@right;
+    }
+}

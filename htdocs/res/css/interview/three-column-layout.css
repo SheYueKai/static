@@ -1,0 +1,134 @@
+@charset "utf-8";
+/* 常用函数，只能通过less引用 start */
+/* 伸缩布局容器 */
+/* 伸缩性 */
+/* 伸缩方向为垂直方向 */
+/* 水平方向居中对齐 */
+/* 侧轴方向居中对齐 */
+/* 垂直方向居中对齐 */
+/* 水平和垂直方向居中对齐 */
+/* 文字溢出隐藏--控制文本单行溢出用省略号表示 */
+/* 文字溢出隐藏--控制文本多行溢出用省略号表示 */
+/* 旋转变换 */
+/* 清除浮动 */
+/* 1:横向border 一般在伪类中引用 (配合定位使用) */
+/* 2:纵向border 一般在伪类中引用 (配合定位使用) */
+/* 常用函数，只能通过less引用 end */
+section {
+  min-width: 750px;
+  margin-bottom: 50px;
+}
+.main {
+  background-color: #ff5145;
+}
+.left {
+  width: 100px;
+  background-color: #5c9dff;
+}
+.right {
+  width: 200px;
+  background-color: #0f0;
+}
+.section1 {
+  position: relative;
+  min-height: 300px;
+}
+.section1 .main {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  right: 200px;
+}
+.section1 .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section1 .right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.section2 {
+  position: relative;
+}
+.section2 .main {
+  margin: 0 200px 0 100px;
+}
+.section2 .left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.section2 .right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.section3 .main {
+  margin: 0 200px 0 100px;
+}
+.section3 .left {
+  float: left;
+}
+.section3 .right {
+  float: right;
+}
+.section4 {
+  display: -webkit-box;
+  /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+  display: -webkit-flex;
+  /* Chrome 21+, Safari 6.1+, iOS Safari 7+ */
+  display: flex;
+  /* Chrome 29+, Firefox 22+, IE 11+, Android 4.4+ */
+}
+.section4 .main {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.section5 {
+  display: table;
+}
+.section5 > div {
+  display: table-cell;
+}
+.section6 {
+  display: grid;
+  grid-template-columns: 100px auto 200px;
+}
+.section7 {
+  min-width: 450px;
+  padding: 0 200px 0 100px;
+}
+.section7 > div {
+  position: relative;
+  float: left;
+}
+.section7 .left {
+  left: -100px;
+  margin-left: -100%;
+}
+.section7 .right {
+  right: -200px;
+  margin-left: -200px;
+}
+.section8 {
+  min-width: 450px;
+}
+.section8 > div {
+  float: left;
+}
+.section8 .main {
+  background-color: transparent;
+}
+.section8 .main .inner {
+  margin: 0 200px 0 100px;
+  background-color: #ff5145;
+}
+.section8 .left {
+  margin-left: -100%;
+}
+.section8 .right {
+  margin-left: -200px;
+}
