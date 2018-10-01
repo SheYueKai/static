@@ -25,3 +25,13 @@ array.forEach(function(item,index){
 });
 
 console.log(array.hasOwnProperty("color"));
+
+for(let i = 0; i < 10; i++){
+	if(i == 5){
+		continue;//跳出当前循环
+	}
+	if(i == 8){
+		break;//跳出循环体
+	}
+	console.log("i = " + i);
+}
