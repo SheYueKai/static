@@ -61,3 +61,71 @@ var word = '777';
 Pet.speak.call(this,'hi');
 Dog('world');
 
+(function(){
+    return function(){
+        console.log('666');
+    }
+})()();
+
+function add(){
+    var age = 100;
+    return function(){
+        age++;
+        return age;
+    }
+}
+var a = add();
+console.log(a());
+console.log(a());
+
+var time = 11;
+var times;
+function timeout(){
+    time--;
+    if(time <= 0){
+        clearTimeout(times);
+    }else{
+        times = setTimeout(function(){
+            if(time < 10){
+                console.log('0' + time);
+            }else{
+                console.log(time);
+            }
+            timeout();
+        },1000);
+    }
+}
+// timeout();
+
+var timed;
+function timeint(){
+    timed = setInterval(function(){
+        time--;
+        if(time <= 0){
+            clearInterval(timed);
+        }
+        if(time < 10){
+            console.log('0' + time);
+        }else{
+            console.log(time);
+        }
+    },1000);
+}
+// timeint();
+
+var search = location.search ? location.search.slice(1) : '';
+function getAttr(url){
+    var array = url.split('&');
+    var item = [];
+    var obj = {};
+    var key,value;
+    for(var i = 0;i < array.length;i++){
+        item = array[i].split('=');
+        key = item[0];
+        value = item[1];
+        obj[key] = value;
+    }
+    return obj;
+}
+console.log(getAttr(search));
+
