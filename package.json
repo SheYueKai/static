@@ -12,7 +12,12 @@
   "author": "sheyuekai",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
     "gulp": "^3.9.1",
-    "gulp-less": "^4.0.1"
-  }
+    "gulp-babel": "^8.0.0",
+    "gulp-less": "^4.0.1",
+    "gulp-plumber": "^1.2.0"
+  },
+  "devDependencies": {}
 }
